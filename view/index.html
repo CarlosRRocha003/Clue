@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Card Grid</title>
+    <style>
+        /* Add some basic styling for the grid */
+        #cardGrid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <div id="input">
+        <h1>Configure</h1>
+        <div id="inputPlayers">
+            <h3>Player</h3>
+            <input type="text" id="playerNameInput" placeholder="Enter player name" />
+            <button onclick="addPlayer()">Add Player</button>
+        </div>
+        <div id="inputCard">
+            <h3>Card</h3>
+
+            <input type="text" id="cardNameInput" placeholder="Enter card name" />
+            <div>
+                <label for="categorySelector">Select a category:</label>
+                <select id="categorySelector"></select>
+            </div>
+            <select id="whoHasIt" class="whoHasIt"></select>
+            <button onclick="addCard()">Add Card</button>
+        </div>
+    </div>
+
+    <h1>All Cards</h1>
+
+    <div id="cardGrid"></div>
+
+    <button onclick="fetchAllCards()">Fetch All Cards</button>
+</body>
+</html>
